@@ -24,9 +24,7 @@ public class TipoEmpresaController {
 	@RequestMapping("/Cadastradas")
 	public String todosTipo(Model model) {
 		List<TipoEmpresa> list = tipoEmpresaRepo.findAll();
-		
 		model.addAttribute("lista", list);
-		
 		return "TiposEmpresa";
 	}
 	
