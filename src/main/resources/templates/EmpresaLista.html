@@ -15,7 +15,7 @@
 </head>
 <body class="container">
 	<h1>Tipos de Empresas Cadastradas:</h1>
-	<a href="/Empresa/TipoEmpresa/AdicionarNovo">Adicionar Novo Tipo</a>
+	<a href="/Empresa/Empresas/AdicionarNova">Adicionar Novo Tipo</a>
 	<br>
 	<a href="/">Voltar</a>
 	<hr>
@@ -23,18 +23,28 @@
 		<thead>
 			<tr>
 				<th scope="col">#ID</th>
-				<th scope="col">Tipo</th>
+				<th scope="col">Nome</th>
+				<th scope="col">CNPJ</th>
+				<th scope="col">Tipo da Empresa</th>
+				<th scope="col">Descrição</th>
+				<th scope="col"></th>
 				<th scope="col"></th>
 
 			</tr>
 		</thead>
 		<tbody>
-			<tr th:each="tipo : ${lista}">
-				<th scope="row" th:text=${tipo.getId()}></th>
-				<td scope="row" th:text="${tipo.tipo}"></td>
+			<tr th:each="emp : ${lista}">
+				<th scope="row" th:text=${emp.getId()}></th>
+				<td scope="row" th:text="${emp.nome}"></td>
+				<td scope="row" th:text="${emp.cnpj}"></td>
+				<td scope="row" th:text="${emp.tipoEmpresa.getTipo()}"></td>
+				<td scope="row" th:text="${emp.descricao}"></td>
 				<td><a
-					th:href="@{/Empresa/TipoEmpresa/deletarTipo/{id}(id=${tipo.getId()})}"
+					th:href="@{/Empresa/Empresas/deletar/{id}(id=${emp.getId()})}"
 					th:method="delete">Deletar</a></td>
+				<td><a
+					th:href="@{/Empresa/Empresas/edit/{id}(id=${emp.getId()})}"
+					th:method="get">Editar</a></td>
 			</tr>
 
 		</tbody>
