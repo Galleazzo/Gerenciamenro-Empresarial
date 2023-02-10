@@ -1,0 +1,12 @@
+@charset "UTF-8";
+
+#footerHP {
+	height: 100px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    left: 0;
+    background-color: #383838;
+    color: white;
+    text-align: center;
+}
