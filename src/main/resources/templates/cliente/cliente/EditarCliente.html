@@ -11,7 +11,6 @@
 	integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
 	crossorigin="anonymous">
 
-
 <style>
 .footerHP {
 	height: 100px;
@@ -29,9 +28,8 @@
 	font-size: 28px;
 }
 </style>
+
 <title>Novo Tipo</title>
-
-
 </head>
 <body class="container">
 
@@ -41,32 +39,34 @@
 
 	<hr>
 
-	<form action="/Empresa/Empresas/Nnew" method="POST">
+	<form action="/Cliente/Cliente/Cadastradas" th:object="${cliente}"
+		th:action="@{/Cliente/Cliente/saveEditCliente/{id}(id = ${id})}"
+		method="post">
 
 		<div class="mb-3">
 			<label class="form-label">Nome</label> <input type="text"
-				class="form-control" name="nome">
+				class="form-control" name="nome" th:field="*{nome}">
 		</div>
 		<div class="mb-3">
 			<label class="form-label">CNPJ</label> <input type="text"
-				class="form-control" name="cnpj">
+				class="form-control" name="cnpj" th:field="*{cnpj}">
 		</div>
 
 		<div class="mb-3">
 			<label class="form-label">Tipo Empresarial</label> <select
-				class="form-select" name="tipoEmpresa">
-				<option th:each="lista : ${lista}" th:text="${lista.tipo}"
+				class="form-select" name="tipoCliente" th:field="*{tipoCliente}">
+				<option th:each="lista : ${tipoEmpresas}" th:text="${lista.tipo}"
 					th:value="${lista.id}"></option>
 			</select>
 		</div>
 
 		<div class="mb-3">
 			<label class="form-label">Descrição</label> <input type="text"
-				class="form-control" name="descricao">
+				class="form-control" name="descricao" th:field="*{descricao}">
 		</div>
 
 
-		<button type="submit" class="btn btn-primary">Adicionar</button>
+		<button type="submit" class="btn btn-primary">Salvar</button>
 	</form>
 
 	<footer class="footerHP">

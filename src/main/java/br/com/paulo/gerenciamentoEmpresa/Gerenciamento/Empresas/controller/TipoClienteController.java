@@ -16,8 +16,8 @@ import br.com.paulo.gerenciamentoEmpresa.Gerenciamento.Empresas.models.repositor
 import br.com.paulo.gerenciamentoEmpresa.Gerenciamento.Empresas.models.repository.TipoClienteRepo;
 
 @Controller
-@RequestMapping(path = "/Empresa/TipoEmpresa")
-public class TipoEmpresaController {
+@RequestMapping(path = "/Cliente/TipoCliente")
+public class TipoClienteController {
 	
 	@Autowired
 	private ClienteRepo clienteRepo;
@@ -29,7 +29,7 @@ public class TipoEmpresaController {
 	public String todosTipo(Model model) {
 		List<TipoCliente> list = tipoClienteRepo.findAll();
 		model.addAttribute("lista", list);
-		return "empresa/tipoEmpresa/TiposEmpresa";
+		return "cliente/tipoCliente/TiposCliente";
 	}
 	
 	@GetMapping("/AdicionarNovo")

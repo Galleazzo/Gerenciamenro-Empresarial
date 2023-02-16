@@ -11,6 +11,7 @@
 	integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
 	crossorigin="anonymous">
 
+
 <style>
 .footerHP {
 	height: 100px;
@@ -28,45 +29,44 @@
 	font-size: 28px;
 }
 </style>
-
 <title>Novo Tipo</title>
+
+
 </head>
 <body class="container">
 
-	<h1>Adicionar nova Empresa</h1>
+	<h1>Adicionar novo Cliente</h1>
 	<h3>Preencha os dados a seguir:</h3>
 	<a href="javascript:history.back()">Voltar</a>
 
 	<hr>
 
-	<form action="/Empresa/Empresas/Cadastradas" th:object="${empresa}"
-		th:action="@{/Empresa/Empresas/saveEditEmpresa/{id}(id = ${id})}"
-		method="post">
+	<form action="/Cliente/Cliente/Nnew" method="POST">
 
 		<div class="mb-3">
 			<label class="form-label">Nome</label> <input type="text"
-				class="form-control" name="nome" th:field="*{nome}">
+				class="form-control" name="nome">
 		</div>
 		<div class="mb-3">
 			<label class="form-label">CNPJ</label> <input type="text"
-				class="form-control" name="cnpj" th:field="*{cnpj}">
+				class="form-control" name="cnpj">
 		</div>
 
 		<div class="mb-3">
 			<label class="form-label">Tipo Empresarial</label> <select
-				class="form-select" name="tipoEmpresa" th:field="*{tipoEmpresa}">
-				<option th:each="lista : ${tipoEmpresas}" th:text="${lista.tipo}"
+				class="form-select" name="tipoCliente">
+				<option th:each="lista : ${lista}" th:text="${lista.tipo}"
 					th:value="${lista.id}"></option>
 			</select>
 		</div>
 
 		<div class="mb-3">
 			<label class="form-label">Descrição</label> <input type="text"
-				class="form-control" name="descricao" th:field="*{descricao}">
+				class="form-control" name="descricao">
 		</div>
 
 
-		<button type="submit" class="btn btn-primary">Salvar</button>
+		<button type="submit" class="btn btn-primary">Adicionar</button>
 	</form>
 
 	<footer class="footerHP">

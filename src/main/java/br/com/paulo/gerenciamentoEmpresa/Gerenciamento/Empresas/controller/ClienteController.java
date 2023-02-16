@@ -18,8 +18,8 @@ import br.com.paulo.gerenciamentoEmpresa.Gerenciamento.Empresas.models.repositor
 import br.com.paulo.gerenciamentoEmpresa.Gerenciamento.Empresas.models.repository.TipoClienteRepo;
 
 @Controller
-@RequestMapping(path = "/Empresa/Empresas")
-public class EmpresaController {
+@RequestMapping(path = "/Cliente/Cliente")
+public class ClienteController {
 	
 	@Autowired
 	private ClienteRepo clienteRepo;
@@ -31,7 +31,7 @@ public class EmpresaController {
 	public String verTodas(Model model) {
 		List<Cliente> list = clienteRepo.findAll();
 		model.addAttribute("lista", list);
-		return "empresa/empresa/EmpresaLista";
+		return "cliente/cliente/ClienteLista";
 	}
 	
 	@GetMapping("/AdicionarNova")
@@ -39,19 +39,19 @@ public class EmpresaController {
 		List<TipoCliente> list = tipoClienteRepo.findAll();
 		model.addAttribute("lista", list);
 		
-		return "empresa/empresa/FormNovaEmpresa";
+		return "cliente/cliente/FormNovoCliente";
 	}
 	
 	@PostMapping("/Nnew")
 	public String add(Cliente cliente) {
 		clienteRepo.save(cliente);
-		return "redirect:/Empresa/Empresas/Cadastradas";
+		return "redirect:/Cliente/Cliente/Cadastradas";
 	}
 	
 	@GetMapping("/deletar/{id}")
 	public String delete(@PathVariable Integer id) {
 		clienteRepo.deleteById(id);
-		return "redirect:/Empresa/Empresas/Cadastradas";
+		return "redirect:/Cliente/Cliente/ClienteCadastradas";
 	}
 	
 	@GetMapping("/edit/{id}")
@@ -62,13 +62,13 @@ public class EmpresaController {
 		model.addAttribute("empresa", empresa);
 		
 		model.addAttribute("tipoEmpresas", tipoEmpresas);
-		return "empresa/empresa/EditarEmpresa";
+		return "cliente/cliente/EditarCliente";
 	}
 	
-	@PostMapping("/saveEditEmpresa/{id}")
-	public String saveedit(@PathVariable Integer id,  @Validated Cliente empresa) {
-		clienteRepo.save(empresa);
-		return "redirect:/Empresa/Empresas/Cadastradas";
+	@PostMapping("/saveEditCliente/{id}")
+	public String saveedit(@PathVariable Integer id,  @Validated Cliente cliente) {
+		clienteRepo.save(cliente);
+		return "redirect:/Cliente/Cliente/Cadastradas";
 		
 	}
 	

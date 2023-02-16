@@ -29,11 +29,11 @@
 	font-size: 28px;
 }
 </style>
-<title>Tipos de Empresas</title>
+<title>Clientes</title>
 </head>
 <body class="container">
-	<h1>Tipos de Empresas Cadastradas:</h1>
-	<a href="/Empresa/Empresas/AdicionarNova">Adicionar Novo Tipo</a>
+	<h1>Clientes Cadastradas:</h1>
+	<a href="/Cliente/Cliente/AdicionarNova">Adicionar Novo</a>
 	<br>
 	<a href="/">Voltar</a>
 	<hr>
@@ -43,7 +43,7 @@
 				<th scope="col">#ID</th>
 				<th scope="col">Nome</th>
 				<th scope="col">CNPJ</th>
-				<th scope="col">Tipo da Empresa</th>
+				<th scope="col">Tipo do Cliente</th>
 				<th scope="col">Descrição</th>
 				<th scope="col"></th>
 				<th scope="col"></th>
@@ -58,10 +58,10 @@
 				<td scope="row" th:text="${emp.tipoEmpresa.getTipo()}"></td>
 				<td scope="row" th:text="${emp.descricao}"></td>
 				<td><a
-					th:href="@{/Empresa/Empresas/deletar/{id}(id=${emp.getId()})}"
+					th:href="@{/Cliente/Cliente/deletar/{id}(id=${emp.getId()})}"
 					th:method="delete">Deletar</a></td>
 				<td><a
-					th:href="@{/Empresa/Empresas/edit/{id}(id=${emp.getId()})}"
+					th:href="@{/Cliente/Cliente/edit/{id}(id=${emp.getId()})}"
 					th:method="get">Editar</a></td>
 			</tr>
 
