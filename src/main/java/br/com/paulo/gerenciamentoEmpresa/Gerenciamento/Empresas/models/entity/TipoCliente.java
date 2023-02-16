@@ -6,7 +6,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class TipoEmpresa {
+public class TipoCliente {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -14,11 +14,11 @@ public class TipoEmpresa {
 	
 	private String tipo;
 	
-	public TipoEmpresa() {
+	public TipoCliente() {
 		
 	}
 
-	public TipoEmpresa(String tipo) {
+	public TipoCliente(String tipo) {
 		super();
 		this.tipo = tipo;
 	}

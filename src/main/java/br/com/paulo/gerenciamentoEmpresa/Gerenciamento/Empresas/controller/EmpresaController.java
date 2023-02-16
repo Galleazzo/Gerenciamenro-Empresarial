@@ -12,62 +12,62 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import br.com.paulo.gerenciamentoEmpresa.Gerenciamento.Empresas.models.entity.Empresa;
-import br.com.paulo.gerenciamentoEmpresa.Gerenciamento.Empresas.models.entity.TipoEmpresa;
-import br.com.paulo.gerenciamentoEmpresa.Gerenciamento.Empresas.models.repository.EmpresaRepo;
-import br.com.paulo.gerenciamentoEmpresa.Gerenciamento.Empresas.models.repository.TipoEmpresaRepo;
+import br.com.paulo.gerenciamentoEmpresa.Gerenciamento.Empresas.models.entity.Cliente;
+import br.com.paulo.gerenciamentoEmpresa.Gerenciamento.Empresas.models.entity.TipoCliente;
+import br.com.paulo.gerenciamentoEmpresa.Gerenciamento.Empresas.models.repository.ClienteRepo;
+import br.com.paulo.gerenciamentoEmpresa.Gerenciamento.Empresas.models.repository.TipoClienteRepo;
 
 @Controller
 @RequestMapping(path = "/Empresa/Empresas")
 public class EmpresaController {
 	
 	@Autowired
-	private EmpresaRepo empresaRepo;
+	private ClienteRepo clienteRepo;
 	
 	@Autowired
-	private TipoEmpresaRepo tipoEmpresaRepo;
+	private TipoClienteRepo tipoClienteRepo;
 	
 	@GetMapping("/Cadastradas")
 	public String verTodas(Model model) {
-		List<Empresa> list = empresaRepo.findAll();
+		List<Cliente> list = clienteRepo.findAll();
 		model.addAttribute("lista", list);
-		return "EmpresaLista";
+		return "empresa/empresa/EmpresaLista";
 	}
 	
 	@GetMapping("/AdicionarNova")
 	public String addN(Model model) {
-		List<TipoEmpresa> list = tipoEmpresaRepo.findAll();
+		List<TipoCliente> list = tipoClienteRepo.findAll();
 		model.addAttribute("lista", list);
 		
-		return "FormNovaEmpresa";
+		return "empresa/empresa/FormNovaEmpresa";
 	}
 	
 	@PostMapping("/Nnew")
-	public String add(Empresa empresa) {
-		empresaRepo.save(empresa);
+	public String add(Cliente cliente) {
+		clienteRepo.save(cliente);
 		return "redirect:/Empresa/Empresas/Cadastradas";
 	}
 	
 	@GetMapping("/deletar/{id}")
 	public String delete(@PathVariable Integer id) {
-		empresaRepo.deleteById(id);
+		clienteRepo.deleteById(id);
 		return "redirect:/Empresa/Empresas/Cadastradas";
 	}
 	
 	@GetMapping("/edit/{id}")
 	public String editar(@PathVariable Integer id, Model model) {
-		Optional<Empresa> empresa = empresaRepo.findById(id);
+		Optional<Cliente> empresa = clienteRepo.findById(id);
 		
-		List<TipoEmpresa> tipoEmpresas = tipoEmpresaRepo.findAll();
+		List<TipoCliente> tipoEmpresas = tipoClienteRepo.findAll();
 		model.addAttribute("empresa", empresa);
 		
 		model.addAttribute("tipoEmpresas", tipoEmpresas);
-		return "EditarEmpresa";
+		return "empresa/empresa/EditarEmpresa";
 	}
 	
 	@PostMapping("/saveEditEmpresa/{id}")
-	public String saveedit(@PathVariable Integer id,  @Validated Empresa empresa) {
-		empresaRepo.save(empresa);
+	public String saveedit(@PathVariable Integer id,  @Validated Cliente empresa) {
+		clienteRepo.save(empresa);
 		return "redirect:/Empresa/Empresas/Cadastradas";
 		
 	}

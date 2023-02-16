@@ -7,7 +7,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToOne;
 
 @Entity
-public class Empresa {
+public class Cliente {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -17,19 +17,19 @@ public class Empresa {
 	private String cnpj;
 	
 	@OneToOne
-	private TipoEmpresa tipoEmpresa;
+	private TipoCliente tipoCliente;
 	
 	private String descricao;
 	
-	public Empresa() {
+	public Cliente() {
 		
 	}
 
-	public Empresa(String nome, String cnpj, TipoEmpresa tipoEmpresa, String descricao) {
+	public Cliente(String nome, String cnpj, TipoCliente tipoCliente, String descricao) {
 		super();
 		this.nome = nome;
 		this.cnpj = cnpj;
-		this.tipoEmpresa = tipoEmpresa;
+		this.tipoCliente = tipoCliente;
 		this.descricao = descricao;
 	}
 
@@ -57,12 +57,12 @@ public class Empresa {
 		this.cnpj = cnpj;
 	}
 
-	public TipoEmpresa getTipoEmpresa() {
-		return tipoEmpresa;
+	public TipoCliente getTipoEmpresa() {
+		return tipoCliente;
 	}
 
-	public void setTipoEmpresa(TipoEmpresa tipoEmpresa) {
-		this.tipoEmpresa = tipoEmpresa;
+	public void setTipoEmpresa(TipoCliente tipoCliente) {
+		this.tipoCliente = tipoCliente;
 	}
 
 	public String getDescricao() {

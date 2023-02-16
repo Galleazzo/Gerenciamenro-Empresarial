@@ -11,41 +11,41 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import br.com.paulo.gerenciamentoEmpresa.Gerenciamento.Empresas.models.entity.TipoEmpresa;
-import br.com.paulo.gerenciamentoEmpresa.Gerenciamento.Empresas.models.repository.EmpresaRepo;
-import br.com.paulo.gerenciamentoEmpresa.Gerenciamento.Empresas.models.repository.TipoEmpresaRepo;
+import br.com.paulo.gerenciamentoEmpresa.Gerenciamento.Empresas.models.entity.TipoCliente;
+import br.com.paulo.gerenciamentoEmpresa.Gerenciamento.Empresas.models.repository.ClienteRepo;
+import br.com.paulo.gerenciamentoEmpresa.Gerenciamento.Empresas.models.repository.TipoClienteRepo;
 
 @Controller
 @RequestMapping(path = "/Empresa/TipoEmpresa")
 public class TipoEmpresaController {
 	
 	@Autowired
-	private EmpresaRepo empresaRepo;
+	private ClienteRepo clienteRepo;
 	
 	@Autowired
-	private TipoEmpresaRepo tipoEmpresaRepo;
+	private TipoClienteRepo tipoClienteRepo;
 	
 	@GetMapping("/Cadastradas")
 	public String todosTipo(Model model) {
-		List<TipoEmpresa> list = tipoEmpresaRepo.findAll();
+		List<TipoCliente> list = tipoClienteRepo.findAll();
 		model.addAttribute("lista", list);
-		return "TiposEmpresa";
+		return "empresa/tipoEmpresa/TiposEmpresa";
 	}
 	
 	@GetMapping("/AdicionarNovo")
 	public String adicionarNovo() {
-		return "FormNovoTipo";
+		return "empresa/tipoEmpresa/FormNovoTipo";
 	}
 	
 	@PostMapping("/Nnew")
-	public String Nnew(TipoEmpresa tipoEmpresa) {
-		tipoEmpresaRepo.save(tipoEmpresa);
+	public String Nnew(TipoCliente tipoEmpresa) {
+		tipoClienteRepo.save(tipoEmpresa);
 		return "redirect:/Empresa/TipoEmpresa/Cadastradas";
 	}
 	
 	@GetMapping("/deletarTipo/{id}")
 	public String deletar(@PathVariable Integer id) {
-		tipoEmpresaRepo.deleteById(id);
+		tipoClienteRepo.deleteById(id);
 		return "redirect:/Empresa/TipoEmpresa/Cadastradas";
 	}
 	
