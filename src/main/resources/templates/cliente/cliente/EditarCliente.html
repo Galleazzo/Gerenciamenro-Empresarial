@@ -55,7 +55,7 @@
 		<div class="mb-3">
 			<label class="form-label">Tipo Empresarial</label> <select
 				class="form-select" name="tipoCliente" th:field="*{tipoCliente}">
-				<option th:each="lista : ${tipoEmpresas}" th:text="${lista.tipo}"
+				<option th:each="lista : ${tipoClientes}" th:text="${lista.tipo}"
 					th:value="${lista.id}"></option>
 			</select>
 		</div>

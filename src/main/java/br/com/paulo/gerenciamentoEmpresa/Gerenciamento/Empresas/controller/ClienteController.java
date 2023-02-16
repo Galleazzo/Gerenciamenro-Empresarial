@@ -56,12 +56,12 @@ public class ClienteController {
 	
 	@GetMapping("/edit/{id}")
 	public String editar(@PathVariable Integer id, Model model) {
-		Optional<Cliente> empresa = clienteRepo.findById(id);
+		Optional<Cliente> cliente = clienteRepo.findById(id);
 		
-		List<TipoCliente> tipoEmpresas = tipoClienteRepo.findAll();
-		model.addAttribute("empresa", empresa);
+		List<TipoCliente> tipoClientes = tipoClienteRepo.findAll();
+		model.addAttribute("cliente", cliente);
 		
-		model.addAttribute("tipoEmpresas", tipoEmpresas);
+		model.addAttribute("tipoClientes", tipoClientes);
 		return "cliente/cliente/EditarCliente";
 	}
 	

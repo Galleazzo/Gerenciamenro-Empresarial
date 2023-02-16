@@ -29,24 +29,24 @@ public class TipoClienteController {
 	public String todosTipo(Model model) {
 		List<TipoCliente> list = tipoClienteRepo.findAll();
 		model.addAttribute("lista", list);
-		return "cliente/tipoCliente/TiposCliente";
+		return "cliente/tipoCliente/TiposClientes";
 	}
 	
 	@GetMapping("/AdicionarNovo")
 	public String adicionarNovo() {
-		return "empresa/tipoEmpresa/FormNovoTipo";
+		return "cliente/tipoCliente/FormNovoTipo";
 	}
 	
 	@PostMapping("/Nnew")
 	public String Nnew(TipoCliente tipoEmpresa) {
 		tipoClienteRepo.save(tipoEmpresa);
-		return "redirect:/Empresa/TipoEmpresa/Cadastradas";
+		return "redirect:/Cliente/TipoCliente/Cadastradas";
 	}
 	
 	@GetMapping("/deletarTipo/{id}")
 	public String deletar(@PathVariable Integer id) {
 		tipoClienteRepo.deleteById(id);
-		return "redirect:/Empresa/TipoEmpresa/Cadastradas";
+		return "redirect:/Cliente/TipoCliente/Cadastradas";
 	}
 	
 	
