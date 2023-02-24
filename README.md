@@ -1,6 +1,6 @@
 # Gerenciamenro-Empresarial
 
-Esse projeto é mais um projetinho pessoal para treinar e dar continuidade aos meus estudos de Spring-Boot. 
+(projeto em alterações) Esse projeto é mais um projetinho pessoal para treinar e dar continuidade aos meus estudos de Spring-Boot. 
 Nesse projetinho acontece a relação UM PARA UM, entre as entidades Empresa e Tipo de empresa.
 Uma empresa só pode ter um tipo de empresa.
 
