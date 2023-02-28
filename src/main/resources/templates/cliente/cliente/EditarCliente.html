@@ -29,11 +29,11 @@
 }
 </style>
 
-<title>Novo Tipo</title>
+<title>Editar Cliente</title>
 </head>
 <body class="container">
 
-	<h1>Adicionar nova Empresa</h1>
+	<h1>Edite oque for necesseario</h1>
 	<h3>Preencha os dados a seguir:</h3>
 	<a href="javascript:history.back()">Voltar</a>
 
@@ -55,7 +55,7 @@
 		<div class="mb-3">
 			<label class="form-label">Tipo Empresarial</label> <select
 				class="form-select" name="tipoCliente" th:field="*{tipoCliente}">
-				<option th:each="lista : ${tipoClientes}" th:text="${lista.tipo}"
+				<option th:each="lista : ${tipoCliente}" th:text="${lista.tipo}"
 					th:value="${lista.id}"></option>
 			</select>
 		</div>

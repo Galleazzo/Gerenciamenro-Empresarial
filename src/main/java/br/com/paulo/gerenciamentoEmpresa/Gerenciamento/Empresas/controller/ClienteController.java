@@ -51,17 +51,17 @@ public class ClienteController {
 	@GetMapping("/deletar/{id}")
 	public String delete(@PathVariable Integer id) {
 		clienteRepo.deleteById(id);
-		return "redirect:/Cliente/Cliente/ClienteCadastradas";
+		return "redirect:/Cliente/Cliente/Cadastradas";
 	}
 	
 	@GetMapping("/edit/{id}")
 	public String editar(@PathVariable Integer id, Model model) {
 		Optional<Cliente> cliente = clienteRepo.findById(id);
 		
-		List<TipoCliente> tipoClientes = tipoClienteRepo.findAll();
+		List<TipoCliente> tipoCliente = tipoClienteRepo.findAll();
 		model.addAttribute("cliente", cliente);
 		
-		model.addAttribute("tipoClientes", tipoClientes);
+		model.addAttribute("tipoCliente", tipoCliente);
 		return "cliente/cliente/EditarCliente";
 	}
 	

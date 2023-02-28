@@ -55,7 +55,7 @@
 				<th scope="row" th:text=${emp.getId()}></th>
 				<td scope="row" th:text="${emp.nome}"></td>
 				<td scope="row" th:text="${emp.cnpj}"></td>
-				<td scope="row" th:text="${emp.nome}"></td>
+				<td scope="row" th:text="${emp.tipoCliente.getTipo()}"></td>
 				<td scope="row" th:text="${emp.descricao}"></td>
 				<td><a
 					th:href="@{/Cliente/Cliente/deletar/{id}(id=${emp.getId()})}"

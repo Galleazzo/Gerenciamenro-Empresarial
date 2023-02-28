@@ -57,11 +57,11 @@ public class Cliente {
 		this.cnpj = cnpj;
 	}
 
-	public TipoCliente getTipoEmpresa() {
+	public TipoCliente getTipoCliente() {
 		return tipoCliente;
 	}
 
-	public void setTipoEmpresa(TipoCliente tipoCliente) {
+	public void setTipoCliente(TipoCliente tipoCliente) {
 		this.tipoCliente = tipoCliente;
 	}
 
