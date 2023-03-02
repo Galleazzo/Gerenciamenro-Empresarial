@@ -1,10 +1,19 @@
 package br.com.paulo.gerenciamentoEmpresa.Gerenciamento.Empresas.models.entity;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
 import br.com.paulo.gerenciamentoEmpresa.Gerenciamento.Empresas.models.enuns.Cargo;
 
+@Entity
 public class Funcionario {
 	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
+	
 	private String nome;
 	private Double salario;
 	private String setor;
