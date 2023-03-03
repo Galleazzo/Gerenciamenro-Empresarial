@@ -61,6 +61,10 @@ public class ClienteController {
 		Optional<Cliente> cliente = clienteRepo.findById(id);
 		
 		List<TipoCliente> tipoCliente = tipoClienteRepo.findAll();
+		
+		List<Cliente> list = clienteRepo.findAll();
+		int j = list.size();
+		model.addAttribute("j", j);
 		model.addAttribute("cliente", cliente);
 		
 		model.addAttribute("tipoCliente", tipoCliente);
