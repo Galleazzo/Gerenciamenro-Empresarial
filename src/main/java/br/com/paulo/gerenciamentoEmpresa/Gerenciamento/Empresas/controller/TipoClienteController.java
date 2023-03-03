@@ -28,8 +28,10 @@ public class TipoClienteController {
 	@GetMapping("/Cadastradas")
 	public String todosTipo(Model model) {
 		List<TipoCliente> list = tipoClienteRepo.findAll();
+		int x = list.size();
 		model.addAttribute("lista", list);
-		return "cliente/tipoCliente/TiposClientes";
+		model.addAttribute("x", x);
+		return "cliente/tipoCliente/TiposClientesLista";
 	}
 	
 	@GetMapping("/AdicionarNovo")
