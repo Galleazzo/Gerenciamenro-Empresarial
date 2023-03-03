@@ -30,7 +30,9 @@ public class ClienteController {
 	@GetMapping("/Cadastradas")
 	public String verTodas(Model model) {
 		List<Cliente> list = clienteRepo.findAll();
+		int x = list.size();
 		model.addAttribute("lista", list);
+		model.addAttribute("x", x);
 		return "cliente/cliente/ListaCliente";
 	}
 	
