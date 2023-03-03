@@ -14,6 +14,8 @@ public class Cliente {
 	private Integer id;
 	
 	private String nome;
+	private String telefone;
+	private String email;
 	private String cnpj;
 	
 	@OneToOne
@@ -25,12 +27,14 @@ public class Cliente {
 		
 	}
 
-	public Cliente(String nome, String cnpj, TipoCliente tipoCliente, String descricao) {
+	public Cliente(String nome, String cnpj, TipoCliente tipoCliente, String descricao, String numero, String email) {
 		super();
 		this.nome = nome;
 		this.cnpj = cnpj;
 		this.tipoCliente = tipoCliente;
 		this.descricao = descricao;
+		this.telefone = numero;
+		this.email = email;
 	}
 
 	public Integer getId() {
@@ -72,6 +76,23 @@ public class Cliente {
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
 	}
+
+	public String getTelefone() {
+		return telefone;
+	}
+
+	public void setTelefone(String telefone) {
+		this.telefone = telefone;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	
 	
 	
 	
