@@ -31,7 +31,7 @@ public class ClienteController {
 	public String verTodas(Model model) {
 		List<Cliente> list = clienteRepo.findAll();
 		model.addAttribute("lista", list);
-		return "cliente/cliente/ClienteLista";
+		return "cliente/cliente/ListaCliente";
 	}
 	
 	@GetMapping("/AdicionarNova")
