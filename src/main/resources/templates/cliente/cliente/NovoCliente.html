@@ -1,0 +1,251 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+    <base href="../../../">
+    <meta charset="utf-8">
+    <meta name="author" content="Softnio">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description"
+        content="A powerful and conceptual apps base dashboard template that especially build for developers and programmers.">
+    <!-- Fav Icon  -->
+    <link rel="shortcut icon" href="./images/favicon.png">
+    <!-- Page Title  -->
+    <title>Form Layouts - General | DashLite Admin Template</title>
+    <!-- StyleSheets  -->
+    <link href="/styles/dashlite.css" th:href="@{/styles/dashlite.css}"
+	rel="stylesheet">
+<link id="skin-default" href="/styles/theme.css"
+	th:href="@{/styles/theme.css}" rel="stylesheet">
+</head>
+
+<body class="nk-body npc-default has-apps-sidebar has-sidebar ">
+    <div class="nk-app-root">
+
+        <!-- main @s -->
+        <div class="nk-main ">
+            <!-- wrap @s -->
+            <div class="nk-wrap ">
+                <!-- main header @s -->
+                <div class="nk-header nk-header-fixed is-light">
+                    <div class="container-fluid">
+                        <div class="nk-header-wrap">
+                            <div class="nk-menu-trigger d-xl-none ml-n1">
+                                <a href="#" class="nk-nav-toggle nk-quick-nav-icon" data-target="sidebarMenu"><em
+                                        class="icon ni ni-menu"></em></a>
+                            </div>
+                            <div class="nk-header-app-name">
+                                <div class="nk-header-app-logo">
+                                    <em class="icon ni ni-dashlite bg-purple-dim"></em>
+                                </div>
+                                <div class="nk-header-app-info">
+                                    <span class="sub-text">Demo</span>
+                                    <span class="lead-text">GerEmp</span>
+                                </div>
+                            </div>
+
+                            <div class="nk-header-tools">
+                                <ul class="nk-quick-nav">
+
+                                    <li class="dropdown user-dropdown">
+                                        <a href="#" class="dropdown-toggle mr-n1" data-toggle="dropdown">
+                                            <div class="user-toggle">
+                                                <div class="user-avatar sm">
+                                                    <em class="icon ni ni-user-alt"></em>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <div class="dropdown-menu dropdown-menu-md dropdown-menu-right">
+                                            <div class="dropdown-inner user-card-wrap bg-lighter d-none d-md-block">
+                                                <div class="user-card">
+                                                    <div class="user-avatar">
+                                                        <span>AB</span>
+                                                    </div>
+                                                    <div class="user-info">
+                                                        <span class="lead-text">Abu Bin Ishtiyak</span>
+                                                        <span class="sub-text">info@softnio.com</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="dropdown-inner">
+                                                <ul class="link-list">
+                                                    <li><a href="html/user-profile-regular.html"><em
+                                                                class="icon ni ni-user-alt"></em><span>View
+                                                                Profile</span></a></li>
+                                                    <li><a href="html/user-profile-setting.html"><em
+                                                                class="icon ni ni-setting-alt"></em><span>Account
+                                                                Setting</span></a></li>
+                                                    <li><a href="html/user-profile-activity.html"><em
+                                                                class="icon ni ni-activity-alt"></em><span>Login
+                                                                Activity</span></a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="dropdown-inner">
+                                                <ul class="link-list">
+                                                    <li><a href="#"><em class="icon ni ni-signout"></em><span>Sign
+                                                                out</span></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- main header @e -->
+                <div class="nk-sidebar" data-content="sidebarMenu">
+                    <div class="nk-sidebar-inner" data-simplebar>
+                        <ul class="nk-menu nk-menu-md">
+                            <li class="nk-menu-heading">
+                                <h6 class="overline-title text-primary-alt">Principal</h6>
+                            </li><!-- .nk-menu-heading -->
+                            <li class="nk-menu-item">
+                                <a href="html/index.html" class="nk-menu-link">
+                                    <span class="nk-menu-icon"><em class="icon ni ni-dashboard"></em></span>
+                                    <span class="nk-menu-text">Menu</span>
+                                </a>
+                            </li><!-- .nk-menu-item -->
+                            <!-- .nk-menu-item -->
+                            
+                            <li class="nk-menu-item has-sub">
+                                <a href="#" class="nk-menu-link nk-menu-toggle">
+                                    <span class="nk-menu-icon"><em class="icon ni ni-card-view"></em></span>
+                                    <span class="nk-menu-text">Clientes</span>
+                                </a>
+                                <ul class="nk-menu-sub">
+                                    <li class="nk-menu-item">
+                                        <a href="/Cliente/Cliente/Cadastradas" class="nk-menu-link"><span class="nk-menu-text">Clientes cadastrados</span></a>
+                                    </li>
+                                    <li class="nk-menu-item">
+                                        <a href="/Cliente/TipoCliente/Cadastradas" class="nk-menu-link"><span class="nk-menu-text">Tipo de Clientes</span></a>
+                                    </li>
+                                    
+                                </ul><!-- .nk-menu-sub -->
+                            </li><!-- .nk-menu-item -->
+                            
+                           
+                        </ul><!-- .nk-menu -->
+                    </div>
+                </div>
+                <!-- content @s -->
+                <div class="nk-content ">
+                    <div class="container-fluid">
+                        <div class="nk-content-inner">
+                            <div class="nk-content-body">
+                                <div class="components-preview wide-md mx-auto">
+                                    <div class="nk-block nk-block-lg">
+                                        <div class="nk-block-head">
+                                            <div class="nk-block-head-content">
+                                                <h4 class="title nk-block-title">Adicionar Novo Cliente</h4>
+                                                <div class="nk-block-des">
+                                                    <p>Complete as informações a seguir:</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card card-bordered">
+                                            <div class="card-inner">
+                                                <div class="card-head">
+                                                    <h5 class="card-title">Cliente</h5>
+                                                </div>
+                                                <form action="/Cliente/Cliente/Nnew" method="POST">
+                                                    <div class="row g-4">
+                                                        <div class="col-lg-6">
+                                                            <div class="form-group">
+                                                                <label class="form-label" for="full-name-1">Nome</label>
+                                                                <div class="form-control-wrap">
+                                                                    <input type="text" class="form-control"
+                                                                        id="full-name-1" name="nome">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-6">
+                                                            <div class="form-group">
+                                                                <label class="form-label"
+                                                                    for="email-address-1">Email</label>
+                                                                <div class="form-control-wrap">
+                                                                    <input type="text" class="form-control"
+                                                                        id="email-address-1" name="email">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-6">
+                                                            <div class="form-group">
+                                                                <label class="form-label"
+                                                                    for="phone-no-1">Telefone</label>
+                                                                <div class="form-control-wrap">
+                                                                    <input type="text" class="form-control"
+                                                                        id="phone-no-1" name="telefone">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-6">
+                                                            <div class="form-group">
+                                                                <label class="form-label" for="phone-no-1">CNPJ ou
+                                                                    CPF</label>
+                                                                <div class="form-control-wrap">
+                                                                    <input type="text" class="form-control"
+                                                                        id="phone-no-1" name="cnpj">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-6">
+                                                            <div class="form-group">
+                                                                <label class="form-label" for="default-06">Tipo de Cliente</label>
+                                                                <div class="form-control-wrap ">
+                                                                    <div class="form-control-select">
+                                                                        <select class="form-control" id="default-06" name="tipoCliente">
+                                                                            <option th:each="lista : ${lista}" th:text="${lista.tipo}"
+					th:value="${lista.id}"></option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-6">
+                                                            <div class="form-group">
+                                                                <label class="form-label"
+                                                                    for="fva-message">Descrição</label>
+                                                                <div class="form-control-wrap">
+                                                                    <textarea class="form-control form-control-sm"
+                                                                        id="fva-message" name="descricao"
+                                                                        placeholder="Escreva um resumo ou uma anotação do cliente"
+                                                                        required></textarea>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-12">
+                                                            <div class="form-group">
+                                                                <button type="submit"
+                                                                    class="btn btn-lg btn-primary">Salvar cliente</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- content @e -->
+
+
+
+            </div>
+            <!-- wrap @e -->
+        </div>
+        <!-- main @e -->
+    </div>
+    <!-- app-root @e -->
+    <!-- JavaScript -->
+    	<script type="text/javascript" th:src="@{/js/bundle.js}"></script>
+	<script type="text/javascript" th:src="@{/js/scripts.js}"></script>
+	<script type="text/javascript" th:src="@{/js/charts/gd-analytics.js}"></script>
+	<script type="text/javascript" th:src="@{/js/libs/jqvmap.js}"></script>
+</body>
+
+</html>

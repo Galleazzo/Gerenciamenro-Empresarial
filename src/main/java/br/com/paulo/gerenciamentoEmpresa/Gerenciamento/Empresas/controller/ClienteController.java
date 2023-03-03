@@ -39,7 +39,7 @@ public class ClienteController {
 		List<TipoCliente> list = tipoClienteRepo.findAll();
 		model.addAttribute("lista", list);
 		
-		return "cliente/cliente/FormNovoCliente";
+		return "cliente/cliente/NovoCliente";
 	}
 	
 	@PostMapping("/Nnew")

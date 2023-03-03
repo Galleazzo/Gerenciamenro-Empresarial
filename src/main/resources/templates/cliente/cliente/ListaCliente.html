@@ -96,39 +96,40 @@
 				</div>
 				<!-- main header @e -->
 				<div class="nk-sidebar" data-content="sidebarMenu">
-                    <div class="nk-sidebar-inner" data-simplebar>
-                        <ul class="nk-menu nk-menu-md">
-                            <li class="nk-menu-heading">
-                                <h6 class="overline-title text-primary-alt">Principal</h6>
-                            </li><!-- .nk-menu-heading -->
-                            <li class="nk-menu-item">
-                                <a href="html/index.html" class="nk-menu-link">
-                                    <span class="nk-menu-icon"><em class="icon ni ni-dashboard"></em></span>
-                                    <span class="nk-menu-text">Menu</span>
-                                </a>
-                            </li><!-- .nk-menu-item -->
-                            <!-- .nk-menu-item -->
-                            
-                            <li class="nk-menu-item has-sub">
-                                <a href="#" class="nk-menu-link nk-menu-toggle">
-                                    <span class="nk-menu-icon"><em class="icon ni ni-card-view"></em></span>
-                                    <span class="nk-menu-text">Clientes</span>
-                                </a>
-                                <ul class="nk-menu-sub">
-                                    <li class="nk-menu-item">
-                                        <a href="/Cliente/Cliente/Cadastradas" class="nk-menu-link"><span class="nk-menu-text">Clientes cadastrados</span></a>
-                                    </li>
-                                    <li class="nk-menu-item">
-                                        <a href="/Cliente/TipoCliente/Cadastradas" class="nk-menu-link"><span class="nk-menu-text">Tipo de Clientes</span></a>
-                                    </li>
-                                    
-                                </ul><!-- .nk-menu-sub -->
-                            </li><!-- .nk-menu-item -->
-                            
-                           
-                        </ul><!-- .nk-menu -->
-                    </div>
-                </div>
+					<div class="nk-sidebar-inner" data-simplebar>
+						<ul class="nk-menu nk-menu-md">
+							<li class="nk-menu-heading">
+								<h6 class="overline-title text-primary-alt">Principal</h6>
+							</li>
+							<!-- .nk-menu-heading -->
+							<li class="nk-menu-item"><a href="html/index.html"
+								class="nk-menu-link"> <span class="nk-menu-icon"><em
+										class="icon ni ni-dashboard"></em></span> <span class="nk-menu-text">Menu</span>
+							</a></li>
+							<!-- .nk-menu-item -->
+							<!-- .nk-menu-item -->
+
+							<li class="nk-menu-item has-sub"><a href="#"
+								class="nk-menu-link nk-menu-toggle"> <span
+									class="nk-menu-icon"><em class="icon ni ni-card-view"></em></span>
+									<span class="nk-menu-text">Clientes</span>
+							</a>
+								<ul class="nk-menu-sub">
+									<li class="nk-menu-item"><a
+										href="/Cliente/Cliente/Cadastradas" class="nk-menu-link"><span
+											class="nk-menu-text">Clientes cadastrados</span></a></li>
+									<li class="nk-menu-item"><a
+										href="/Cliente/TipoCliente/Cadastradas" class="nk-menu-link"><span
+											class="nk-menu-text">Tipo de Clientes</span></a></li>
+
+								</ul> <!-- .nk-menu-sub --></li>
+							<!-- .nk-menu-item -->
+
+
+						</ul>
+						<!-- .nk-menu -->
+					</div>
+				</div>
 				<!-- content @s -->
 				<div class="nk-content ">
 					<div class="container-fluid">
@@ -154,9 +155,12 @@
 														<li><a href="#"
 															class="btn btn-white btn-outline-light"><em
 																class="icon ni ni-download-cloud"></em><span>Export</span></a></li>
+
+
 														<li class="nk-block-tools-opt" title="Adicionar Cliente"><a
-															href="#" class="btn btn-primary"><em
-																class="icon ni ni-plus" style="color: white;"></em></a></li>
+															href="/Cliente/Cliente/AdicionarNova"
+															class="btn btn-primary"><em class="icon ni ni-plus"
+																style="color: white;"></em></a></li>
 													</ul>
 												</div>
 											</div>
@@ -207,7 +211,8 @@
 													<div class="nk-tb-item" th:each="emp : ${lista}">
 
 														<div class="nk-tb-col tb-col-mb">
-															<span class="tb-amount" th:text=${emp.getId()}><span class="currency">#</span ></span>
+															<span class="tb-amount" th:text=${emp.getId()}><span
+																class="currency">#</span></span>
 														</div>
 														<div class="nk-tb-col tb-col-md">
 															<span th:text=${emp.nome}></span>
@@ -222,16 +227,23 @@
 															<span th:text="${emp.cnpj}"></span>
 														</div>
 														<div class="nk-tb-col tb-col-md">
-															<span><span class="currency" th:text="${emp.tipoCliente.getTipo()}"></span></span>
+															<span><span class="currency"
+																th:text="${emp.tipoCliente.getTipo()}"></span></span>
 														</div>
 														<!--<div class="nk-tb-col tb-col-md">
                                                             <span>Lorem ipsum dolor sit, amet consectetur</span>
                                                         </div>-->
 														<div class="nk-tb-col tb-col-md">
-															<a href="#" class="btn"><em class="icon ni ni-trash"></em></a>
+															<a
+																th:href="@{/Cliente/Cliente/deletar/{id}(id=${emp.getId()})}"
+																th:method="delete" class="btn"><em
+																class="icon ni ni-trash"></em></a>
 														</div>
 														<div class="nk-tb-col tb-col-md">
-															<a href="#" class="btn"><em class="icon ni ni-eye"></em></a>
+															<a
+																th:href="@{/Cliente/Cliente/edit/{id}(id=${emp.getId()})}"
+																th:method="get" class="btn"><em
+																class="icon ni ni-eye"></em></a>
 														</div>
 
 
