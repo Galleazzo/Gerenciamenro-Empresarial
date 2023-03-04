@@ -47,8 +47,12 @@ public class TipoClienteController {
 	
 	@GetMapping("/deletarTipo/{id}")
 	public String deletar(@PathVariable Integer id) {
-		tipoClienteRepo.deleteById(id);
-		return "redirect:/Cliente/TipoCliente/Cadastradas";
+		try {
+			tipoClienteRepo.deleteById(id);
+			return "redirect:/Cliente/TipoCliente/Cadastradas";
+		} catch (Exception e) {
+			return "cliente/tipoCliente/ErroExcluir";
+		}
 	}
 	
 	
