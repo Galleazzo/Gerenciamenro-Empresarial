@@ -6,6 +6,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 import br.com.paulo.gerenciamentoEmpresa.Gerenciamento.Empresas.models.enuns.Cargo;
+import br.com.paulo.gerenciamentoEmpresa.Gerenciamento.Empresas.models.enuns.ContratoFuncionario;
 
 @Entity
 public class Funcionario {
@@ -16,19 +17,23 @@ public class Funcionario {
 	
 	private String nome;
 	private Double salario;
+	private String cnpj;
 	private String setor;
 	private Cargo cargo;
+	private ContratoFuncionario contratoFuncionario;
 	
 	public Funcionario() {
 		
 	}
 	
-	public Funcionario(String nome, Double salario, String setor, Cargo cargo) {
+	public Funcionario(String nome, Double salario, String setor, Cargo cargo, String cnpj, ContratoFuncionario contratoFuncionario) {
 		super();
 		this.nome = nome;
 		this.salario = salario;
 		this.setor = setor;
 		this.cargo = cargo;
+		this.cnpj = cnpj;
+		this.contratoFuncionario = contratoFuncionario;
 	}
 
 	public Integer getId() {
@@ -70,6 +75,23 @@ public class Funcionario {
 	public void setCargo(Cargo cargo) {
 		this.cargo = cargo;
 	}
+
+	public String getCnpj() {
+		return cnpj;
+	}
+
+	public void setCnpj(String cnpj) {
+		this.cnpj = cnpj;
+	}
+
+	public ContratoFuncionario getContratoFuncionario() {
+		return contratoFuncionario;
+	}
+
+	public void setContratoFuncionario(ContratoFuncionario contratoFuncionario) {
+		this.contratoFuncionario = contratoFuncionario;
+	}
+	
 	
 	
 	
