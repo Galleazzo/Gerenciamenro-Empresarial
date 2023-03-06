@@ -1,7 +1,38 @@
-<html>
-<body>
-	
-	<h1>Ola mundo</h1>
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
 
+<head>
+    <base href="../">
+    <meta charset="utf-8">
+    <meta name="author" content="Softnio">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="A powerful and conceptual apps base dashboard template that especially build for developers and programmers.">
+    <!-- Fav Icon  -->
+    <link rel="shortcut icon" href="./images/favicon.png">
+    <!-- Page Title  -->
+    <title>Analytics Dashboard | DashLite Admin Template</title>
+    <!-- StyleSheets  -->
+    <!--  <link rel="stylesheet" href="./assets/css/dashlite.css?ver=1.8.0">
+    <link id="skin-default" rel="stylesheet" href="./assets/css/theme.css?ver=1.8.0">-->
+    <link href="/styles/dashlite.css" th:href="@{/styles/dashlite.css}" rel="stylesheet">
+    <link id="skin-default" href="/styles/theme.css" th:href="@{/styles/theme.css}" rel="stylesheet">
+</head>
+
+<body class="nk-body npc-default has-apps-sidebar has-sidebar ">
+	
+		
+		<div th:replace="~{fragment :: default}"></div>
+	    
+            <!-- wrap @e -->
+        <!-- main @e -->
+    <!-- app-root @e -->
+    <!-- JavaScript -->
+    <script type="text/javascript" th:src="@{/js/bundle.js}"></script>
+    <script type="text/javascript" th:src="@{/js/scripts.js}"></script>
+    <script type="text/javascript" th:src="@{/js/charts/gd-analytics.js}"></script>
+    <script type="text/javascript" th:src="@{/js/libs/jqvmap.js}"></script>
+    
 </body>
+
 </html>
