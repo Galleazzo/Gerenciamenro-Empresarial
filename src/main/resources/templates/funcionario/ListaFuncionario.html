@@ -11,7 +11,7 @@
     <!-- Fav Icon  -->
     <link rel="shortcut icon" href="./images/favicon.png">
     <!-- Page Title  -->
-    <title>Analytics Dashboard | DashLite Admin Template</title>
+    <title>Funcionarios</title>
     <!-- StyleSheets  -->
     <!--  <link rel="stylesheet" href="./assets/css/dashlite.css?ver=1.8.0">
     <link id="skin-default" rel="stylesheet" href="./assets/css/theme.css?ver=1.8.0">-->
@@ -20,12 +20,160 @@
 </head>
 
 <body class="nk-body npc-default has-apps-sidebar has-sidebar ">
-	
+		
+		<div class="nk-main ">
+			<!-- wrap @s -->
+			<div class="nk-wrap ">
 		
 		<div th:replace="~{fragment :: default}"></div>
 	    
             <!-- wrap @e -->
         <!-- main @e -->
+        
+        <div class="nk-content ">
+					<div class="container-fluid">
+						<div class="nk-content-inner">
+							<div class="nk-content-body">
+								<div class="nk-block-head nk-block-head-sm">
+									<div class="nk-block-between">
+										<div class="nk-block-head-content">
+											<h3 class="nk-block-title page-title">Lista de Funcionarios</h3>
+											<div class="nk-block-des text-soft">
+												<p >Voce tem um total de <span th:text="${qtdFuncionarios}"></span> funcionarios.</p>
+											</div>
+										</div>
+										<!-- .nk-block-head-content -->
+										<div class="nk-block-head-content">
+											<div class="toggle-wrap nk-block-tools-toggle">
+												<a href="#"
+													class="btn btn-icon btn-trigger toggle-expand mr-n1"
+													data-target="pageMenu"><em
+													class="icon ni ni-menu-alt-r"></em></a>
+												<div class="toggle-expand-content" data-content="pageMenu">
+													<ul class="nk-block-tools g-3">
+														<li><a href="#"
+															class="btn btn-white btn-outline-light"><em
+																class="icon ni ni-download-cloud"></em><span>Export</span></a></li>
+
+
+														<li class="nk-block-tools-opt" title="Adicionar Funcionario"><a
+															href="/Funcionario/AdicionarNovo"
+															class="btn btn-primary"><em class="icon ni ni-plus"
+																style="color: white;"></em></a></li>
+													</ul>
+												</div>
+											</div>
+											<!-- .toggle-wrap -->
+										</div>
+										<!-- .nk-block-head-content -->
+									</div>
+									<!-- .nk-block-between -->
+								</div>
+								<!-- .nk-block-head -->
+								<div class="nk-block">
+									<div class="card card-bordered card-stretch">
+										<div class="card-inner-group">
+
+											<div class="card-inner p-0">
+												<div class="nk-tb-list nk-tb-ulist">
+													<div class="nk-tb-item nk-tb-head">
+
+														<div class="nk-tb-col">
+															<span class="sub-text">#ID</span>
+														</div>
+														<div class="nk-tb-col tb-col-mb">
+															<span class="sub-text">Nome</span>
+														</div>
+														<div class="nk-tb-col tb-col-md">
+															<span class="sub-text">Email</span>
+														</div>
+														<div class="nk-tb-col tb-col-lg">
+															<span class="sub-text">Telefone</span>
+														</div>
+														<div class="nk-tb-col tb-col-lg">
+															<span class="sub-text">CNPJ/CPF</span>
+														</div>
+														<div class="nk-tb-col tb-col-md">
+															<span class="sub-text">Cargo</span>
+														</div>
+														<div class="nk-tb-col tb-col-md">
+															<span class="sub-text">Contrato</span>
+														</div>
+														
+														<!--<div class="nk-tb-col tb-col-md"><span class="sub-text">Desc.</span></div>-->
+														<div class="nk-tb-col tb-col-md">
+															<span class="sub-text"></span>
+														</div>
+														<div class="nk-tb-col tb-col-md">
+															<span class="sub-text"></span>
+														</div>
+
+
+													</div>
+													<!-- .nk-tb-item -->
+													<div class="nk-tb-item" th:each="fun : ${lista}">
+
+														<div class="nk-tb-col tb-col-mb">
+															<span class="tb-amount" th:text=${fun.getId()}><span
+																class="currency">#</span></span>
+														</div>
+														<div class="nk-tb-col tb-col-md">
+															<span th:text=${fun.nome}></span>
+														</div>
+														<div class="nk-tb-col tb-col-md">
+															<span th:text=${fun.email}></span>
+														</div>
+														<div class="nk-tb-col tb-col-md">
+															<span th:text=${fun.telefone}></span>
+														</div>
+														<div class="nk-tb-col tb-col-md">
+															<span th:text="${fun.cnpj}"></span>
+														</div>
+														<!-- <div class="nk-tb-col tb-col-md">
+															<span th:text="${fun.cargo}"></span>
+														</div>
+														<div class="nk-tb-col tb-col-md">
+															<span th:text="${emp.contratoFuncionario}"></span>
+														</div> -->
+														
+														<!--<div class="nk-tb-col tb-col-md">
+                                                            <span>Lorem ipsum dolor sit, amet consectetur</span>
+                                                        </div>-->
+														<div class="nk-tb-col tb-col-md">
+															<a
+																th:href="@{/Cliente/Cliente/deletar/{id}(id=${fun.getId()})}"
+																th:method="delete" class="btn"><em
+																class="icon ni ni-trash"></em></a>
+														</div>
+														<div class="nk-tb-col tb-col-md">
+															<a
+																th:href="@{/Cliente/Cliente/edit/{id}(id=${fun.getId()})}"
+																th:method="get" class="btn"><em
+																class="icon ni ni-eye"></em></a>
+														</div>
+
+
+													</div>
+												</div>
+												<!-- .nk-tb-item -->
+												<!-- .nk-tb-item -->
+											</div>
+											<!-- .nk-tb-list -->
+										</div>
+										<!-- .card-inner -->
+
+									</div>
+									<!-- .card-inner-group -->
+								</div>
+								<!-- .card -->
+							</div>
+							<!-- .nk-block -->
+						</div>
+					</div>
+				</div>
+				</div>
+				</div>
+        
     <!-- app-root @e -->
     <!-- JavaScript -->
     <script type="text/javascript" th:src="@{/js/bundle.js}"></script>

@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import br.com.paulo.gerenciamentoEmpresa.Gerenciamento.Empresas.models.entity.Funcionario;
+import br.com.paulo.gerenciamentoEmpresa.Gerenciamento.Empresas.models.enuns.Cargo;
+import br.com.paulo.gerenciamentoEmpresa.Gerenciamento.Empresas.models.enuns.ContratoFuncionario;
 import br.com.paulo.gerenciamentoEmpresa.Gerenciamento.Empresas.models.repository.FuncionarioRepo;
 
 @Controller
@@ -26,5 +28,12 @@ public class FuncionarioController {
 		model.addAttribute("lista", lista);
 		model.addAttribute("qtdFuncionarios", x);
 		return "funcionario/ListaFuncionario";
+	}
+	
+	@GetMapping("/AdicionarNovo")
+	public String adicionarNovo(Model model) {
+		model.addAttribute("cargos", Cargo.values());
+		model.addAttribute("contrato", ContratoFuncionario.values());
+		return "funcionario/NovoFuncionario";
 	}
 }

@@ -17,6 +17,8 @@ public class Funcionario {
 	
 	private String nome;
 	private Double salario;
+	private String telefone;
+	private String email;
 	private String cnpj;
 	private String setor;
 	private Cargo cargo;
@@ -26,7 +28,7 @@ public class Funcionario {
 		
 	}
 	
-	public Funcionario(String nome, Double salario, String setor, Cargo cargo, String cnpj, ContratoFuncionario contratoFuncionario) {
+	public Funcionario(String nome, String email, Double salario, String setor, Cargo cargo, String cnpj, ContratoFuncionario contratoFuncionario, String telefone) {
 		super();
 		this.nome = nome;
 		this.salario = salario;
@@ -34,7 +36,10 @@ public class Funcionario {
 		this.cargo = cargo;
 		this.cnpj = cnpj;
 		this.contratoFuncionario = contratoFuncionario;
+		this.telefone = telefone;
+		this.email = email;
 	}
+	
 
 	public Integer getId() {
 		return id;
@@ -90,6 +95,22 @@ public class Funcionario {
 
 	public void setContratoFuncionario(ContratoFuncionario contratoFuncionario) {
 		this.contratoFuncionario = contratoFuncionario;
+	}
+
+	public String getTelefone() {
+		return telefone;
+	}
+
+	public void setTelefone(String telefone) {
+		this.telefone = telefone;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
 	}
 	
 	
