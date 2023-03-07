@@ -1,0 +1,164 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+    <base href="../../../">
+    <meta charset="utf-8">
+    <meta name="author" content="Softnio">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description"
+        content="A powerful and conceptual apps base dashboard template that especially build for developers and programmers.">
+    <!-- Fav Icon  -->
+    <link rel="shortcut icon" href="./images/favicon.png">
+    <!-- Page Title  -->
+    <title>Novo Funcionario</title>
+    <!-- StyleSheets  -->
+    <link href="/styles/dashlite.css" th:href="@{/styles/dashlite.css}"
+	rel="stylesheet">
+<link id="skin-default" href="/styles/theme.css"
+	th:href="@{/styles/theme.css}" rel="stylesheet">
+</head>
+
+<body class="nk-body npc-default has-apps-sidebar has-sidebar ">
+    <div class="nk-app-root">
+
+        <!-- main @s -->
+        <div class="nk-main ">
+            <!-- wrap @s -->
+            <div class="nk-wrap ">
+                <!-- main header @s -->
+                <div th:replace="~{fragment :: default}"></div>
+                <!-- content @s -->
+                <div class="nk-content ">
+                    <div class="container-fluid">
+                        <div class="nk-content-inner">
+                            <div class="nk-content-body">
+                                <div class="components-preview wide-md mx-auto">
+                                    <div class="nk-block nk-block-lg">
+                                        <div class="nk-block-head">
+                                            <div class="nk-block-head-content">
+                                                <h4 class="title nk-block-title">Adicionar Novo Funcionario</h4>
+                                                <div class="nk-block-des">
+                                                    <p>Complete as informações a seguir:</p>
+                                                </div>
+                                                <div class="nk-block-des">
+													<p><a href="javascript:history.back()">Voltar</a></p>
+												</div>
+                                            </div>
+                                        </div>
+                                        <div class="card card-bordered">
+                                            <div class="card-inner">
+                                                <div class="card-head">
+                                                    <h5 class="card-title">Funcionario</h5>
+                                                </div>
+                                                <form action="/Funcionario/SalvarFuncionario" method="POST">
+                                                    <div class="row g-4">
+                                                        <div class="col-lg-6">
+                                                            <div class="form-group">
+                                                                <label class="form-label" for="full-name-1">Nome</label>
+                                                                <div class="form-control-wrap">
+                                                                    <input type="text" class="form-control"
+                                                                        id="full-name-1" name="nome">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-6">
+                                                            <div class="form-group">
+                                                                <label class="form-label"
+                                                                    for="email-address-1">Email</label>
+                                                                <div class="form-control-wrap">
+                                                                    <input type="text" class="form-control"
+                                                                        id="email-address-1" name="email">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-6">
+                                                            <div class="form-group">
+                                                                <label class="form-label"
+                                                                    for="phone-no-1">Telefone</label>
+                                                                <div class="form-control-wrap">
+                                                                    <input type="text" class="form-control"
+                                                                        id="phone-no-1" name="telefone">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-6">
+                                                            <div class="form-group">
+                                                                <label class="form-label"
+                                                                    for="phone-no-1">Salario</label>
+                                                                <div class="form-control-wrap">
+                                                                    <input type="number" class="form-control"
+                                                                        id="phone-no-1" name="salario">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-6">
+                                                            <div class="form-group">
+                                                                <label class="form-label" for="phone-no-1">CNPJ ou
+                                                                    CPF</label>
+                                                                <div class="form-control-wrap">
+                                                                    <input type="text" class="form-control"
+                                                                        id="phone-no-1" name="cnpj">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-6">
+                                                            <div class="form-group">
+                                                                <label class="form-label" for="default-06">Cargo</label>
+                                                                <div class="form-control-wrap ">
+                                                                    <div class="form-control-select">
+                                                                        <select class="form-control" id="default-06" name="cargo">
+                                                                            <option th:each="cargo : ${cargos}" th:text="${cargo}"></option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-6">
+                                                            <div class="form-group">
+                                                                <label class="form-label" for="default-06">Contrato de Trabalho</label>
+                                                                <div class="form-control-wrap ">
+                                                                    <div class="form-control-select">
+                                                                        <select class="form-control" id="default-06" name="contratoFuncionario">
+                                                                            <option th:each="contrato : ${contrato}" th:text="${contrato}"></option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        
+
+                                                        <div class="col-12">
+                                                            <div class="form-group">
+                                                                <button type="submit"
+                                                                    class="btn btn-lg btn-primary">Salvar Funcionario</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- content @e -->
+
+
+
+            </div>
+            <!-- wrap @e -->
+        </div>
+        <!-- main @e -->
+    </div>
+    <!-- app-root @e -->
+    <!-- JavaScript -->
+    	<script type="text/javascript" th:src="@{/js/bundle.js}"></script>
+	<script type="text/javascript" th:src="@{/js/scripts.js}"></script>
+	<script type="text/javascript" th:src="@{/js/charts/gd-analytics.js}"></script>
+	<script type="text/javascript" th:src="@{/js/libs/jqvmap.js}"></script>
+</body>
+
+</html>

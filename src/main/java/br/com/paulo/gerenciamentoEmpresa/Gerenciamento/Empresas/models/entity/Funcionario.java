@@ -20,7 +20,6 @@ public class Funcionario {
 	private String telefone;
 	private String email;
 	private String cnpj;
-	private String setor;
 	private Cargo cargo;
 	private ContratoFuncionario contratoFuncionario;
 	
@@ -32,7 +31,6 @@ public class Funcionario {
 		super();
 		this.nome = nome;
 		this.salario = salario;
-		this.setor = setor;
 		this.cargo = cargo;
 		this.cnpj = cnpj;
 		this.contratoFuncionario = contratoFuncionario;
@@ -65,13 +63,6 @@ public class Funcionario {
 		this.salario = salario;
 	}
 
-	public String getSetor() {
-		return setor;
-	}
-
-	public void setSetor(String setor) {
-		this.setor = setor;
-	}
 
 	public Cargo getCargo() {
 		return cargo;

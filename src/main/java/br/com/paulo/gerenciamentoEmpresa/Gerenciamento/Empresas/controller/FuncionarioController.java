@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import br.com.paulo.gerenciamentoEmpresa.Gerenciamento.Empresas.models.entity.Funcionario;
@@ -36,4 +37,22 @@ public class FuncionarioController {
 		model.addAttribute("contrato", ContratoFuncionario.values());
 		return "funcionario/NovoFuncionario";
 	}
+	
+	@PostMapping("/SalvarFuncionario")
+	public String SalvarFuncionario(Funcionario funcionario) {
+		funcionarioRepo.save(funcionario);
+		return "redirect:/Funcionario/ListaFuncionario";
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }

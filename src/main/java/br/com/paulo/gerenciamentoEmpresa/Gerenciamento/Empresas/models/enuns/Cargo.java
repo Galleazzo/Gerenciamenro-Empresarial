@@ -11,5 +11,6 @@ public enum Cargo {
 	Entregador,
 	Logistica,
 	Estágiario,
-	Treinee
+	Treinee,
+	Vendedor
 }
