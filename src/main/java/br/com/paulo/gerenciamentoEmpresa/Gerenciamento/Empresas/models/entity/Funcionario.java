@@ -23,6 +23,9 @@ public class Funcionario {
 	private Cargo cargo;
 	private ContratoFuncionario contratoFuncionario;
 	
+	
+	
+	
 	public Funcionario() {
 		
 	}
