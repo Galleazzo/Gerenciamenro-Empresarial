@@ -11,7 +11,7 @@
     <!-- Fav Icon  -->
     <link rel="shortcut icon" href="./images/favicon.png">
     <!-- Page Title  -->
-    <title>Novo Funcionario</title>
+    <title>Editar Funcionario</title>
     <!-- StyleSheets  -->
     <link href="/styles/dashlite.css" th:href="@{/styles/dashlite.css}"
 	rel="stylesheet">
@@ -49,7 +49,7 @@
                                         <div class="card card-bordered">
                                             <div class="card-inner">
                                                 <div class="card-head">
-                                                    <h5 class="card-title">Funcionario</h5>
+                                                    <h5 class="card-title">Funcionario #<span th:text="${idFuncionario}"></span></h5>
                                                 </div>
                                                 <form action="/Funcionario/SalvarFuncionario" method="POST">
                                                     <div class="row g-4">
