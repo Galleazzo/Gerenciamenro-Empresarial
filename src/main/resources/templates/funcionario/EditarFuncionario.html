@@ -37,9 +37,9 @@
                                     <div class="nk-block nk-block-lg">
                                         <div class="nk-block-head">
                                             <div class="nk-block-head-content">
-                                                <h4 class="title nk-block-title">Adicionar Novo Funcionario</h4>
+                                                <h4 class="title nk-block-title">Editar Funcionario</h4>
                                                 <div class="nk-block-des">
-                                                    <p>Complete as informações a seguir:</p>
+                                                    <p>Altere oque for preciso:</p>
                                                 </div>
                                                 <div class="nk-block-des">
 													<p><a href="javascript:history.back()">Voltar</a></p>
@@ -51,14 +51,15 @@
                                                 <div class="card-head">
                                                     <h5 class="card-title">Funcionario #<span th:text="${idFuncionario}"></span></h5>
                                                 </div>
-                                                <form action="/Funcionario/SalvarFuncionario" method="POST">
+                                                <form action="/Funcionario/SalvarFuncionario" method="POST" th:object="${funcionario}"
+													th:action="@{/Funcionario/saveFuncionarioEdit/{id}(id = ${id})}">
                                                     <div class="row g-4">
                                                         <div class="col-lg-6">
                                                             <div class="form-group">
                                                                 <label class="form-label" for="full-name-1">Nome</label>
                                                                 <div class="form-control-wrap">
                                                                     <input type="text" class="form-control"
-                                                                        id="full-name-1" name="nome">
+                                                                        id="full-name-1" name="nome" th:field="*{nome}">
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -68,7 +69,7 @@
                                                                     for="email-address-1">Email</label>
                                                                 <div class="form-control-wrap">
                                                                     <input type="text" class="form-control"
-                                                                        id="email-address-1" name="email">
+                                                                        id="email-address-1" name="email" th:field="*{email}">
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -78,7 +79,7 @@
                                                                     for="phone-no-1">Telefone</label>
                                                                 <div class="form-control-wrap">
                                                                     <input type="text" class="form-control"
-                                                                        id="phone-no-1" name="telefone">
+                                                                        id="phone-no-1" name="telefone" th:field="*{telefone}">
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -88,7 +89,7 @@
                                                                     for="phone-no-1">Salario</label>
                                                                 <div class="form-control-wrap">
                                                                     <input type="number" class="form-control"
-                                                                        id="phone-no-1" name="salario">
+                                                                        id="phone-no-1" name="salario" th:field="*{salario">
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -98,7 +99,7 @@
                                                                     CPF</label>
                                                                 <div class="form-control-wrap">
                                                                     <input type="text" class="form-control"
-                                                                        id="phone-no-1" name="cnpj">
+                                                                        id="phone-no-1" name="cnpj" th:field="*{cnpj}">
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -107,8 +108,8 @@
                                                                 <label class="form-label" for="default-06">Cargo</label>
                                                                 <div class="form-control-wrap ">
                                                                     <div class="form-control-select">
-                                                                        <select class="form-control" id="default-06" name="cargo">
-                                                                            <option th:each="cargo : ${cargos}" th:text="${cargo}"></option>
+                                                                        <select class="form-control" id="default-06" name="cargo" th:field="*{cargos}">
+                                                                            <option th:each="cargo : ${cargos}" th:text="${cargo}" th:value="${cargo}"></option>
                                                                         </select>
                                                                     </div>
                                                                 </div>
@@ -119,8 +120,8 @@
                                                                 <label class="form-label" for="default-06">Contrato de Trabalho</label>
                                                                 <div class="form-control-wrap ">
                                                                     <div class="form-control-select">
-                                                                        <select class="form-control" id="default-06" name="contratoFuncionario">
-                                                                            <option th:each="contrato : ${contrato}" th:text="${contrato}"></option>
+                                                                        <select class="form-control" id="default-06" name="contratoFuncionario" th:field="*{contrato}">
+                                                                            <option th:each="contrato : ${contrato}" th:text="${contrato}" th:value="${contrato}"></option>
                                                                         </select>
                                                                     </div>
                                                                 </div>
