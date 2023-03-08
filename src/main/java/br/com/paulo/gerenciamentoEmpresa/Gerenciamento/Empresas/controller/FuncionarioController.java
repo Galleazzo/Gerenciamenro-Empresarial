@@ -1,11 +1,15 @@
 package br.com.paulo.gerenciamentoEmpresa.Gerenciamento.Empresas.controller;
 
 import java.util.List;
+import java.util.Optional;
+
+import javax.websocket.server.PathParam;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -41,6 +45,12 @@ public class FuncionarioController {
 	@PostMapping("/SalvarFuncionario")
 	public String SalvarFuncionario(Funcionario funcionario) {
 		funcionarioRepo.save(funcionario);
+		return "redirect:/Funcionario/ListaFuncionario";
+	}
+	
+	@GetMapping("/deletarFuncionario/{id}")
+	public String deletarFuncionario(@PathVariable Integer id) {
+		funcionarioRepo.deleteById(id);
 		return "redirect:/Funcionario/ListaFuncionario";
 	}
 	
