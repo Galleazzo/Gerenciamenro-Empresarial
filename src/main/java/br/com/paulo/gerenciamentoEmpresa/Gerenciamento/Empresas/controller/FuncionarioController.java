@@ -52,9 +52,7 @@ public class FuncionarioController {
 	public String deletarFuncionario(@PathVariable Integer id) {
 		funcionarioRepo.deleteById(id);
 		return "redirect:/Funcionario/ListaFuncionario";
-	}
-	
-	
+	}	
 	
 	@GetMapping("/editarFuncionario/{id}")
 	public String editarFuncionario(@PathVariable Integer id, Model model) {
