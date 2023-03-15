@@ -54,13 +54,20 @@ public class FuncionarioController {
 		return "redirect:/Funcionario/ListaFuncionario";
 	}	
 	
+	
+	
 	@GetMapping("/editarFuncionario/{id}")
 	public String editarFuncionario(@PathVariable Integer id, Model model) {
 		Optional<Funcionario> funcionario = funcionarioRepo.findById(id);
+		
+		
 		List<Funcionario> list = funcionarioRepo.findAll();
+		
 		int j = list.size();
 		model.addAttribute("funcionario", funcionario);
 		model.addAttribute("idFuncionario", j);
+		
+		
 		model.addAttribute("cargos", Cargo.values());
 		model.addAttribute("contrato", ContratoFuncionario.values());
 		return "EditarFuncionario";
