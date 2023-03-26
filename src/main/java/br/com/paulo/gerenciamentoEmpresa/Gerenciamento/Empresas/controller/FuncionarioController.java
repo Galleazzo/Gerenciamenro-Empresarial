@@ -58,8 +58,8 @@ public class FuncionarioController {
 	
 	
 	
-	@GetMapping("/editarFuncionario/{id}")
-	public String editarFuncionario(@PathVariable Integer id, Model model) {
+	@GetMapping("/editarFuncionario")
+	public String editarFuncionario(@RequestParam Integer id, Model model) {
 		Optional<Funcionario> funcionario = funcionarioRepo.findById(id);
 		
 		
