@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import br.com.paulo.gerenciamentoEmpresa.Gerenciamento.Empresas.models.entity.Funcionario;
 import br.com.paulo.gerenciamentoEmpresa.Gerenciamento.Empresas.models.enuns.Cargo;
@@ -48,8 +49,8 @@ public class FuncionarioController {
 		return "redirect:/Funcionario/ListaFuncionario";
 	}
 	
-	@GetMapping("/deletarFuncionario/{id}")
-	public String deletarFuncionario(@PathVariable Integer id) {
+	@GetMapping("/deletarFuncionario")
+	public String deletarFuncionario(@RequestParam Integer id) {
 		funcionarioRepo.deleteById(id);
 		return "redirect:/Funcionario/ListaFuncionario";
 	}	
