@@ -3,17 +3,18 @@ package br.com.paulo.gerenciamentoEmpresa.Gerenciamento.Empresas.controller;
 import java.util.List;
 import java.util.Optional;
 
-import javax.websocket.server.PathParam;
-
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.data.web.SpringDataWebProperties.Pageable;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+
 
 import br.com.paulo.gerenciamentoEmpresa.Gerenciamento.Empresas.models.entity.Funcionario;
 import br.com.paulo.gerenciamentoEmpresa.Gerenciamento.Empresas.models.enuns.Cargo;
@@ -22,7 +23,7 @@ import br.com.paulo.gerenciamentoEmpresa.Gerenciamento.Empresas.models.repositor
 
 @Controller
 @RequestMapping(path = "/Funcionario")
-public class FuncionarioController {
+public class FuncionarioController{
 	
 	@Autowired
 	private FuncionarioRepo funcionarioRepo;
@@ -81,10 +82,12 @@ public class FuncionarioController {
 		return "redirect:/Funcionario/ListaFuncionario";
 	}
 	
-	
-	
-	
-	
-	
+	/*
+	 * public Page<Funcionario> findByCriteria(int page, int size, Model model){
+	 * org.springframework.data.domain.Pageable paging = PageRequest.of(page, size);
+	 * Iterable<Funcionario> list = funcionarioRepo.findAll(paging);
+	 * 
+	 * return paging; }
+	 */
 	
 }
