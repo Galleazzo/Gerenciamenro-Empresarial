@@ -51,8 +51,8 @@
                                                 <div class="card-head">
                                                     <h5 class="card-title">Funcionario #<span th:text="${idFuncionario}"></span></h5>
                                                 </div>
-                                                <form action="/Funcionario/SalvarFuncionario" method="POST" th:object="${funcionario}"
-													th:action="@{/Funcionario/saveFuncionarioEdit/{id}(id = ${id})}">
+                                                <form action="/Funcionario/ListaFuncionario" method="POST" th:object="${funcionario}"
+													th:action="@{/Funcionario/saveFuncionarioEdit?id={id}(id = ${id})}">
                                                     <div class="row g-4">
                                                         <div class="col-lg-6">
                                                             <div class="form-group">
@@ -89,7 +89,7 @@
                                                                     for="phone-no-1">Salario</label>
                                                                 <div class="form-control-wrap">
                                                                     <input type="number" class="form-control"
-                                                                        id="phone-no-1" name="salario" th:field="*{salario">
+                                                                        id="phone-no-1" name="salario" th:field="*{salario}">
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -108,8 +108,8 @@
                                                                 <label class="form-label" for="default-06">Cargo</label>
                                                                 <div class="form-control-wrap ">
                                                                     <div class="form-control-select">
-                                                                        <select class="form-control" id="default-06" name="cargo" th:field="*{cargos}">
-                                                                            <option th:each="cargo : ${cargos}" th:text="${cargo}" th:value="${cargo}"></option>
+                                                                        <select class="form-control" id="default-06" name="cargo" th:field="*{cargo}">
+                                                                            <option th:each="cargos : ${cargo}" th:text="${cargos}" th:value="${cargos}"></option>
                                                                         </select>
                                                                     </div>
                                                                 </div>
@@ -120,8 +120,8 @@
                                                                 <label class="form-label" for="default-06">Contrato de Trabalho</label>
                                                                 <div class="form-control-wrap ">
                                                                     <div class="form-control-select">
-                                                                        <select class="form-control" id="default-06" name="contratoFuncionario" th:field="*{contrato}">
-                                                                            <option th:each="contrato : ${contrato}" th:text="${contrato}" th:value="${contrato}"></option>
+                                                                        <select class="form-control" id="default-06" name="contratoFuncionario" th:field="*{contratoFuncionario}">
+                                                                            <option th:each="contrato : ${contratoFuncionario}" th:text="${contrato}" th:value="${contrato}"></option>
                                                                         </select>
                                                                     </div>
                                                                 </div>
@@ -132,7 +132,7 @@
                                                         <div class="col-12">
                                                             <div class="form-group">
                                                                 <button type="submit"
-                                                                    class="btn btn-lg btn-primary">Salvar Funcionario</button>
+                                                                    class="btn btn-lg btn-primary">Editar Funcionario</button>
                                                             </div>
                                                         </div>
                                                     </div>

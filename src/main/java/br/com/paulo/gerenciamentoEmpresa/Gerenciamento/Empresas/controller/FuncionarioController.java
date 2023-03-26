@@ -8,6 +8,7 @@ import javax.websocket.server.PathParam;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -69,11 +70,16 @@ public class FuncionarioController {
 		model.addAttribute("idFuncionario", j);
 		
 		
-		model.addAttribute("cargos", Cargo.values());
-		model.addAttribute("contrato", ContratoFuncionario.values());
-		return "EditarFuncionario";
+		model.addAttribute("cargo", Cargo.values());
+		model.addAttribute("contratoFuncionario", ContratoFuncionario.values());
+		return "funcionario/EditarFuncionario";
 	}
 	
+	@PostMapping("/saveFuncionarioEdit")
+	public String saveFuncionarioEdit(@RequestParam Integer id, @Validated Funcionario funcionario) {
+		funcionarioRepo.save(funcionario);
+		return "redirect:/Funcionario/ListaFuncionario";
+	}
 	
 	
 	
