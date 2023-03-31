@@ -2,6 +2,7 @@ package br.com.paulo.gerenciamentoEmpresa.Gerenciamento.Empresas.controller;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.Stack;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.data.web.SpringDataWebProperties.Pageable;
@@ -37,6 +38,8 @@ public class FuncionarioController{
 		model.addAttribute("qtdFuncionarios", x);
 		return "funcionario/ListaFuncionario";
 	}
+	
+	
 	
 	@GetMapping("/AdicionarNovo")
 	public String adicionarNovo(Model model) {

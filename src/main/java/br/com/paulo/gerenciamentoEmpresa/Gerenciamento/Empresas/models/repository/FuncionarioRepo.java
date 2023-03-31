@@ -10,9 +10,7 @@ import br.com.paulo.gerenciamentoEmpresa.Gerenciamento.Empresas.models.entity.Fu
 
 public interface FuncionarioRepo extends JpaRepository<Funcionario, Integer>{
 	
-	Page<Funcionario> findBy(int page, int size);
 	
-	Page<Funcionario> findAll(Pageable pageable);
 	
 	
 	
