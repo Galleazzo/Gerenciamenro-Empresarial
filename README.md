@@ -1,25 +1,47 @@
-# Gerenciamenro-Empresarial
+# 🏢 Gerenciamento Empresarial
 
-(projeto em desevolvimento mas funcionando) Esse projeto é mais um projetinho pessoal para treinar e dar continuidade aos meus estudos de Spring-Boot. 
-Nesse projetinho acontece a relação UM PARA UM, entre as entidades Empresa e Tipo de empresa.
-Uma empresa só pode ter um tipo de empresa.
+**Status do Projeto:** Em desenvolvimento (Funcionando)
 
-# Tecnologias Usadas
+Este é um projeto pessoal que estou desenvolvendo para aprimorar minhas habilidades em Spring-Boot. O objetivo principal deste projeto é implementar uma relação UM PARA UM entre as entidades Empresa e Tipo de Empresa, onde uma empresa só pode ter um tipo de empresa.
 
-- Java 
+## 🚀 Tecnologias Utilizadas
+
+- Java
 - Spring-Boot
-- Thymleaf
+- Thymeleaf
 - HTML5
-- BootStrap
-- Git 
+- Bootstrap
+- Git
 
-# Como usar 
+## 📦 Como Utilizar o Projeto
 
-Primeiro dê um Git clone no projeto e importe na sua IDE de uso. Recomendo que use o STS ou outra que possui suporte ao Spring-Boot
-Depois mude as configurações no .properties para não dar erro no seu banco de dados 
-Ao fazer isso, o código estará pronto para ser iniciado
-Dê um play e inicie no seu navegador a URL no localhost configurado na sua IDE, normalmente é 8080
+1. Clone o repositório para a sua máquina local.
+   ```bash
+   git clone https://github.com/Galleazzo/Gerenciamenro-Empresarial
+  
+- Importe o projeto na sua IDE de preferência. Recomendamos o uso do Spring Tool Suite (STS) ou qualquer IDE que ofereça suporte ao Spring-Boot.
 
-Obrigado!
+- Configure o arquivo de propriedades (.properties) para evitar erros relacionados ao banco de dados.
 
-- Se você usar esse projeto como material de estudo, uso profissional. Fique a vontade só não esqueça de me dar os créditos ao projeto 
+- Com as configurações feitas, o código estará pronto para ser executado. Inicie o aplicativo na sua IDE.
+
+- Abra seu navegador e acesse a URL configurada localmente (geralmente em http://localhost:8080) na sua IDE.
+
+## 📷 Screenshots
+(Você pode adicionar imagens/screenshots do projeto aqui)
+
+## 🤝 Contribuição
+Contribuições são bem-vindas! Se desejar contribuir, siga os passos abaixo:
+
+- Faça um fork do repositório.
+- Crie um branch com sua funcionalidade: git checkout -b minha-funcionalidade.
+- Faça commit das alterações: git commit -m 'Adicionei uma funcionalidade'.
+- Envie para o seu fork: git push origin minha-funcionalidade.
+- Abra um Pull Request.
+
+## 👏 Agradecimentos
+Obrigado por usar este projeto! Sinta-se à vontade para usá-lo como material de estudo ou em um ambiente profissional, apenas não esqueça de dar os créditos devidos ao projeto.
+
+Se você tiver alguma dúvida ou sugestão, não hesite em entrar em contato. Espero que este projeto seja útil para você!
+
+Nota: Lembre-se de personalizar as informações fictícias, como URLs e nomes de arquivos, com as informações reais do seu projeto. Boa sorte com o desenvolvimento! 🌟
